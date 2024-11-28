@@ -17,6 +17,7 @@ fi
 
 # Copy all fonts to user fonts directory
 echo "Copying fonts..."
+echo "find \"$powerline_fonts_dir\" \( -name \"$prefix*.[ot]tf\" -or -name \"$prefix*.pcf.gz\" \) -type f -print0 | xargs -0 -n1 -I % cp \"%\" \"$font_dir/\""
 find "$powerline_fonts_dir" \( -name "$prefix*.[ot]tf" -or -name "$prefix*.pcf.gz" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
 
 # Reset font cache on Linux
